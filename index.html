@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <link rel='stylesheet' type='text/css' href='default.css'>
+    </head>
+    <body>
+        <div class="row">
+            <div id="settings-page" class="left column">
+                <div id="settings">
+                    <h1><strong>SET</strong></h1>
+                    <button id="rules-button">Rules</button>
+                    <div id="rules" hidden="true">
+                        <p>The goal of the game is to find SETs of three 
+                        cards from the twelve cards placed on the desk. All cards havefour properties:</p>                    
+                        <ol>
+                            <li>Shape</li>
+                            <li>Color</li>
+                            <li>Number</li>
+                            <li>Shading</li>
+                        </ol>
+                        <p>Every SET consists of three cards, where all properties are:</p>
+                        <ul>
+                            <li>the same on all of the cards</li>
+                            <li>different on all of the cards.</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <strong> No of Players </strong><input id="players-number">
+                    <button id="players-button">Enter</button>
+                    <br>
+                    <div class="dropdown">
+                        <button id="game-mode" onclick="myFunction()" class="dropbtn">Game Mode</button>
+                        <div id="myDropdown" class="dropdown-content">
+                        <button id="practice-mode" onclick="setModePractice()">Practice</button>
+                        <button id="competitive-mode" onclick="setModeCompetitive()">Competitive</button>
+                        </div>
+                    </div><br>
+                    <button id="start">Start</button><br>
+
+                </div>
+                
+            </div>
+            <div id="game-page" class="center column" hidden="true">
+                <div id="allPlayers" hidden="true">
+                    <button id="player1" onclick="activatePlayer(this,0)">Player1</button>
+                </div>
+                <button id="set-present" hidden="true">Is there a SET</button><br>
+                <button id="show-set" hidden="true">Show me SET</button><br>
+                <button id="add-cards" hidden="true">Plus three Cards</button><br>
+                <div>
+                    <div class="row">
+                        <div class="topleft">
+                            <h2 id="notify" hidden="true"></h2>
+                            <h2 id="counter" hidden="true">Time Up!</h2>
+                            <h2 id="set-Show" hidden="true">Yes, there is a SET on table</h2>
+                            <h2 id="player-show"></h2>
+                            <button id="end" hidden="true">Go To Settings</button>
+                            <h2 id="setStatus"></h2>
+                        </div>
+                        <div class="topright">
+                            <div id="scores" hidden="true">
+                                <h2><strong>Scores:</strong></h2>
+                                <ul id="display-scores">
+                                    <li id="scores1">Player1:</li>
+                                </ul>
+                            </div>
+                            <h1 id="timer" hidden="true">00:00:00</h1>
+                        </div>
+                    </div>
+                    <table id="table-cards">
+                        <tr id="r0">
+                            <td id="cell0" onclick="pickCard(this, 0)"></td>
+                            <td id="cell1" onclick="pickCard(this, 1)"></td>
+                            <td id="cell2" onclick="pickCard(this, 2)"></td>
+                        </tr>
+                        <tr id="r1">
+                            <td id="cell3" onclick="pickCard(this, 3)"></td>
+                            <td id="cell4" onclick="pickCard(this, 4)"></td>
+                            <td id="cell5" onclick="pickCard(this, 5)"></td>
+                        </tr>
+                        <tr id="r2">
+                            <td id="cell6" onclick="pickCard(this, 6)"></td>
+                            <td id="cell7" onclick="pickCard(this, 7)"></td>
+                            <td id="cell8" onclick="pickCard(this, 8)"></td>
+                        </tr>
+                        <tr id="r3">
+                            <td id="cell9" onclick="pickCard(this, 9)"></td>
+                            <td id="cell10" onclick="pickCard(this, 10)"></td>
+                            <td id="cell11" onclick="pickCard(this, 11)"></td>
+                        </tr>
+                        <tr id="r4">
+                            <td id="cell12" onclick="pickCard(this,12)"></td>
+                            <td id="cell13" onclick="pickCard(this, 13)"></td>
+                            <td id="cell14" onclick="pickCard(this, 14)"></td>
+                        </tr>
+                    </table>
+                    <div class="bottom">
+                        <p id="deckCount"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
